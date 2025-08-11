@@ -97,8 +97,7 @@ python manage.py scrape_news --dry-run
 - **NewsArticle:** Individual news articles with metadata
 - **ScrapingLog:** Tracks scraping operations and statistics
 
-### Scrapers
-- **BBCTechScraper:** Scrapes BBC Technology section
+### Scrapers 
 - **HackerNewsScraper:** Scrapes Hacker News front page
 - **ScraperManager:** Coordinates multiple scrapers
 
@@ -212,7 +211,7 @@ news_scraper_project/
 
 - Django + Wagtail Setup: Complete integration
 - NewsArticle Model: All required fields with metadata
-- Web Scraping: BBC Technology and Hacker News scrapers
+- Web Scraping:  Hacker News scrapers
 - Management Command: Full-featured `scrape_news` command
 - Display in Wagtail: Responsive news list page
 - Pagination: Bootstrap-styled
