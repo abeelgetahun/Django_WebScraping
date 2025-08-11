@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">{{ page.title }}</h1>
+            {% if page.intro %}
+                <div class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    {{ page.intro|richtext }}
+                </div>
+            {% endif %}
+            <div class="mt-4 text-sm text-gray-500">
+                {{ total_articles }} article{{ total_articles|pluralize }} available
+            </div>
+        </header>
+
+        <!-- Articles Grid -->
+        {% if articles %}
+            <div class="grid gap-8 mb-12">
+                {% for article in articles %}
+                    <article class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                        <div class="p-6">
+                            <!-- Article Header -->
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">
+                                    {{ article.source_name }}
+                                </span>
+                                <time class="text-sm text-gray-500" datetime="{{ article.publication_date|date:'c' }}">
+                                    {{ article.publication_date|date:"M j, Y" }}
+                                </time>
+                            </div>
+                            
+                            <!-- Article Title -->
+                            <h1 class="text-2xl font-bold text-gray-900">
+                    <a href="/" class="hover:text-blue-600 transition-colors">News Scraper</a>
+                </h1>
+                <div class="flex space-x-4">
+                    <a href="/admin/" class="text-gray-600 hover:text-blue-600 transition-colors">Admin</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-12">
+        <div class="container mx-auto px-4 py-6">
+            <div class="text-center text-gray-600">
+                <p>&copy; 2024 News Scraper. Built with Django + Wagtail.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

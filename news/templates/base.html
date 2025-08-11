@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}News Scraper - Latest Tech News{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="Latest technology news from top sources">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📰</text></svg>">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <h1 class="text-2xl font-bold text-gray-900">
+                    <a href="/" class="hover:text-blue-600 transition-colors flex items-center">
+                        <span class="text-3xl mr-2">📰</span>
+                        News Scraper
+                    </a>
+                </h1>
+                <div class="flex space-x-4">
+                    <a href="/admin/" class="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 rounded-md bg-gray-100 hover:bg-blue-50">
+                        Admin Panel
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}
+        <!-- Default content if no content block is provided -->
+        <div class="container mx-auto px-4 py-8">
+            <div class="text-center">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Welcome to News Scraper</h2>
+                <p class="text-gray-600">Latest technology news from multiple sources.</p>
+            </div>
+        </div>
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-12">
+        <div class="container mx-auto px-4 py-6">
+            <div class="text-center text-gray-600">
+                <p>&copy; 2024 News Scraper. Built with Django + Wagtail.</p>
+                <p class="text-sm mt-2">
+                    <span class="inline-block mr-4">📊 Real-time scraping</span>
+                    <span class="inline-block mr-4">🔄 Auto-updates</span>
+                    <span class="inline-block">📱 Responsive design</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript for enhanced interactions -->
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add loading indicator for external links
+        document.querySelectorAll('a[target="_blank"]').forEach(link => {
+            link.addEventListener('click', function() {
+                const originalText = this.innerHTML;
+                this.innerHTML = originalText + ' <span class="text-xs">🔄</span>';
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
