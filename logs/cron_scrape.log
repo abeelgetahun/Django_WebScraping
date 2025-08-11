@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "C:\Users\hp\OneDrive\Documents\programs\projects\Django_Wagtail_WebScraping\manage.py", line 22, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\hp\OneDrive\Documents\programs\projects\Django_Wagtail_WebScraping\manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\hp\OneDrive\Documents\programs\projects\Django_Wagtail_WebScraping\venv\Lib\site-packages\django\core\management\__init__.py", line 442, in execute_from_command_line
+    utility.execute()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\OneDrive\Documents\programs\projects\Django_Wagtail_WebScraping\venv\Lib\site-packages\django\core\management\__init__.py", line 436, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\hp\OneDrive\Documents\programs\projects\Django_Wagtail_WebScraping\venv\Lib\site-packages\django\core\management\__init__.py", line 275, in fetch_command
+    klass = load_command_class(app_name, subcommand)
+  File "C:\Users\hp\OneDrive\Documents\programs\projects\Django_Wagtail_WebScraping\venv\Lib\site-packages\django\core\management\__init__.py", line 48, in load_command_class
+    module = import_module("%s.management.commands.%s" % (app_name, name))
+  File "C:\Python313\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\hp\OneDrive\Documents\programs\projects\Django_Wagtail_WebScraping\news\management\commands\scrape_news.py", line 6, in <module>
+    from dateutil import parser as date_parser
+ModuleNotFoundError: No module named 'dateutil'
